@@ -1,2 +1,15 @@
 # python
 /.venv
+*.pyc
+
+# app config
+/conf/
+
+# Editor: vim
+*.swp
+
+# Editor: Visual Studio Code
+/.vscode/
+
+# OSX Finder
+*.DS_Store
