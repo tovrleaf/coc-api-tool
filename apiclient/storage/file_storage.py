@@ -6,7 +6,7 @@ class FileStorage:
 
     def __init__(self, directory):
 
-        if os.path.isdir(directory) != True:
+        if os.path.isdir(directory) is not True:
             raise StorageException('%s is not a valid directory' % directory)
         self.directory = directory
 

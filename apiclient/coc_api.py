@@ -21,7 +21,7 @@ class CocApi:
         return r.content
 
     def __build_uri(self, section):
-        return self.endpoint + '/' + section
+        return self.endpoint + '/' + self.endpoint_version + '/' + section
 
     def __build_headers(self):
         return {"Accept": "application/json",

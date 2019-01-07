@@ -6,8 +6,9 @@ from apiclient.storage.file_storage import FileStorage
 
 bearer_token = config.bearer
 api_endpoint = config.endpoint
+api_version = config.version
 
-api = CocApi(bearer_token, api_endpoint, 'v1')
+api = CocApi(bearer_token, api_endpoint, api_version)
 storage = FileStorage('%s/data' % os.getcwd())
 
 clan_tag = 'LCC8CL'
