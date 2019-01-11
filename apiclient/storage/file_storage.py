@@ -1,21 +1,36 @@
 import os
+import re
 from apiclient.exceptions import StorageException
 
 
 class FileStorage:
 
     def __init__(self, directory):
+        """Constructor for FileStorage class.
+
+        :raises: apiclient.exception If directory contains non
+            alphanumeric chars.
+        """
+        # \w is equivalent to [A-Za-z0-9_]
+        if re.match("^[\\w\\/-]+$", directory) is None:
+            raise StorageException(
+                '%s can only contain alphanumeric characters' % directory)
 
         if os.path.isdir(directory) is not True:
             raise StorageException('%s is not a valid directory' % directory)
         self.directory = directory
 
     def save_clan(self, tag, data):
-        f = open('%s/clan-%s.json' % (self.directory, tag), 'w+')
-        f.write(data)
-        f.close()
+        """Save clan information to a file
+        """
+        self.__save_to_file('clan', tag, data)
 
     def save_player(self, tag, data):
-        f = open('%s/player-%s.json' % (self.directory, tag), 'w+')
+        """Save player information to a file
+        """
+        self.__save_to_file('player', tag, data)
+
+    def __save_to_file(self, token, tag, data):
+        f = open('%s/%s-%s.json' % (self.directory, token, tag), 'w+')
         f.write(data)
         f.close()
