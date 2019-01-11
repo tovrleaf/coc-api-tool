@@ -25,16 +25,16 @@ class FileStorage:
         """
         self.__save_to_file('clan', tag, data)
 
-    def save_player(self, tag, data):
-        """Save player information to a file
-        """
-        self.__save_to_file('player', tag, data)
-
     def read_clan(self, tag):
         return self.__read_from_file('clan', tag)
 
     def read_player(self, tag):
         return self.__read_from_file('player', tag)
+
+    def save_player(self, tag, data):
+        """Save player information to a file
+        """
+        self.__save_to_file('player', tag, data)
 
     def __save_to_file(self, token, tag, data):
         f = open('%s/%s-%s.json' % (self.directory, token, tag), 'w+')
