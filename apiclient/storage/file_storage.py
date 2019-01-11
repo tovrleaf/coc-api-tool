@@ -30,7 +30,23 @@ class FileStorage:
         """
         self.__save_to_file('player', tag, data)
 
+    def read_clan(self, tag):
+        return self.__read_from_file('clan', tag)
+
+    def read_player(self, tag):
+        return self.__read_from_file('player', tag)
+
     def __save_to_file(self, token, tag, data):
         f = open('%s/%s-%s.json' % (self.directory, token, tag), 'w+')
         f.write(data)
         f.close()
+
+    def __read_from_file(self, token, tag):
+        try:
+            f = open('%s/%s-%s.json' % (self.directory, token, tag), 'r')
+        except IOError:
+            raise StorageException(
+                'Unable to read data for a %s with tag %s' % (token, tag))
+        if f.mode != 'r':
+            return None
+        return f.read()
