@@ -1,7 +1,7 @@
 import conf.api_config as config
 import os
 from apiclient.coc_api import CocApi
-from apiclient.storage.file_storage import FileStorage
+from apiclient.storage.storage_factory import StorageFactory
 
 
 bearer_token = config.bearer
@@ -9,7 +9,7 @@ api_endpoint = config.endpoint
 api_version = config.version
 
 api = CocApi(bearer_token, api_endpoint, api_version)
-storage = FileStorage('%s/data' % os.getcwd())
+storage = StorageFactory.factory('file', '%s/data' % os.getcwd())
 
 clan_tag = 'LCC8CL'
 clan_data = api.get_clan(clan_tag)

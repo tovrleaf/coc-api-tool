@@ -1,7 +1,7 @@
 import requests
 
 
-class CocApi:
+class CocApi(object):
 
     def __init__(self, bearer, endpoint, endpoint_version):
         self.bearer = bearer

@@ -1,9 +1,10 @@
 import os
 import re
 from apiclient.exceptions import StorageException
+from abstract_storage import AbstractStorage
 
 
-class FileStorage:
+class FileStorage(AbstractStorage):
 
     def __init__(self, directory):
         """Constructor for FileStorage class.
