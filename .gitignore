@@ -11,6 +11,7 @@
 
 # Editor: vim
 *.swp
+*.swo
 
 # Editor: Visual Studio Code
 /.vscode/
