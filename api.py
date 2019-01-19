@@ -20,7 +20,7 @@ storage.save_clan(clan_tag, clan_data)
 # storage.save_player(player_tag, player_data)
 
 clan_data = storage.read_clan(clan_tag)
-print clan_data
+# print clan_data
 
 # player_data = storage.read_player(player_tag)
 # print player_data
