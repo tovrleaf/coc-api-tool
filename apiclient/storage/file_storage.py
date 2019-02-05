@@ -22,8 +22,6 @@ class FileStorage(AbstractStorage):
         self.directory = directory
 
     def save_clan(self, tag, data):
-        """Save clan information to a file
-        """
         self.__save_to_file('clan', tag, data)
 
     def read_clan(self, tag):
@@ -33,8 +31,6 @@ class FileStorage(AbstractStorage):
         return self.__read_from_file('player', tag)
 
     def save_player(self, tag, data):
-        """Save player information to a file
-        """
         self.__save_to_file('player', tag, data)
 
     def __save_to_file(self, token, tag, data):

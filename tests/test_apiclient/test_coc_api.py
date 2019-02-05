@@ -49,7 +49,7 @@ def test_coc_api_extract_data():
     with mock.patch('apiclient.coc_api.CocApi.CocRequest.get',
                     return_value=stub):
         api = CocApi('a', 'b', 'c')
-        assert api.get_player(4) == 'des'
+        assert api.get_player(4) == 'pp'
 
 
 def helper_request(request, bearer, endpoint, version, tag, token):
