@@ -1,0 +1,2 @@
+class ClanModel(object):
+    pass

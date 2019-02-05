@@ -24,7 +24,7 @@ class AbstractStorage(object):
         """Refresh player data
         """
         data = self.read_clan(tag)
-        self.save_clan(data)
+        self.save_clan(tag, data)
 
     @abc.abstractmethod
     def read_player(self, tag):

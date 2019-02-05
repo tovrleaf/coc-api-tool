@@ -1,0 +1,2 @@
+class MemberModel(object):
+    pass
