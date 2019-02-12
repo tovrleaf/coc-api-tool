@@ -1,13 +1,13 @@
 from abstract_mapper import AbstractMapper
-from apiclient.model.member_model import MemberModel
+from apiclient.model.player_model import PlayerModel
 
 
-class MemberMapper(AbstractMapper):
+class PlayerMapper(AbstractMapper):
 
     def map_dict_to_model(self, data, model=None):
 
         if model is None:
-            model = MemberModel()
+            model = PlayerModel()
 
         model.tag = data['tag']
         model.name = data['name']

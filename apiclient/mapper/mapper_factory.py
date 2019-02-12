@@ -1,5 +1,5 @@
 from clan_mapper import ClanMapper
-from member_mapper import MemberMapper
+from player_mapper import PlayerMapper
 
 
 class MapperFactory(object):
@@ -11,8 +11,8 @@ class MapperFactory(object):
         """
         if type == 'clan':
             return ClanMapper()
-        if type == 'member':
-            return MemberMapper()
+        if type == 'player':
+            return PlayerMapper()
 
         raise RuntimeError('Unable to instantiate mapper with type %s' % type)
     factory = staticmethod(factory)

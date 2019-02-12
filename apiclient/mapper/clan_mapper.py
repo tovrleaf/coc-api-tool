@@ -1,6 +1,6 @@
 from abstract_mapper import AbstractMapper
 from apiclient.model.clan_model import ClanModel
-from member_mapper import MemberMapper
+from player_mapper import PlayerMapper
 
 
 class ClanMapper(AbstractMapper):
@@ -27,8 +27,8 @@ class ClanMapper(AbstractMapper):
         return model
 
     def populate_model_with_members(self, model, member_list):
-        member_mapper = MemberMapper()
+        player_mapper = PlayerMapper()
         model.member_list = {}
         for member in member_list:
-            member_model = member_mapper.map_dict_to_model(member)
-            model.member_list[member_model.tag] = member_model
+            player_model = player_mapper.map_dict_to_model(member)
+            model.member_list[player_model.tag] = player_model
