@@ -1,6 +1,5 @@
 from abstract_mapper import AbstractMapper
 from apiclient.model.clan_model import ClanModel
-from player_mapper import PlayerMapper
 
 
 class ClanMapper(AbstractMapper):
@@ -20,15 +19,6 @@ class ClanMapper(AbstractMapper):
         model.war_win_streak = data['warWinStreak']
         model.war_wins = data['warWins']
         model.members = data['members']
-
-        if populate_members is True:
-            self.populate_model_with_members(model, data['memberList'])
+        model.member_list = data['memberList']
 
         return model
-
-    def populate_model_with_members(self, model, member_list):
-        player_mapper = PlayerMapper()
-        model.member_list = {}
-        for member in member_list:
-            player_model = player_mapper.map_dict_to_model(member)
-            model.member_list[player_model.tag] = player_model

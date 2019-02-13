@@ -14,8 +14,6 @@ class PlayerMapper(AbstractMapper):
         model.exp_level = data['expLevel']
         model.trophies = data['trophies']
         model.versus_trophies = data['versusTrophies']
-        model.clan_rank = data['clanRank']
-        model.previous_rank = data['previousClanRank']
         model.donations = data['donations']
         model.donations_received = data['donationsReceived']
 
